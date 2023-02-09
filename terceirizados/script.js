@@ -38,9 +38,26 @@ const dados = [
 // Efeito: retorna uma lista contendo somente os funcionários terceirizados
 //---------------------------------------------------------------------------
 
-function funcionariosTerceirizados(list) {
+// const list = dados.filter (x =>(x.terceirizado == true));
+// console.log(list);
 
+function funcionariosTerceirizados(list) {
+const vect = [];
+  for (let i=0; i< list.length; i++ ){
+    if (list[i].terceirizado === true){  
+         vect.push(list[i]);
+    }
+  }
+  return vect
 }
+
+// function funcionariosTerceirizados(list) {
+//     return dados.filter (x =>(x.terceirizado == true));
+//   }
+
+
+// return dados.filter(x => (x.terceirizado == true));
+
 
 //---------------------------------------------------------------------------
 // FUNCAO custoTotal
@@ -50,7 +67,7 @@ function funcionariosTerceirizados(list) {
 //---------------------------------------------------------------------------
 
 function custoTotal(list) {
-
+  return list.map(x => x.valorHora * x.horasTrabalhadas).reduce((x, y) =>x + y);
 }
 
 //---------------------------------------------------------------------------
@@ -58,7 +75,7 @@ function custoTotal(list) {
 //---------------------------------------------------------------------------
 
 const terceirizados = funcionariosTerceirizados(dados);
-
+console.log(terceirizados);
 const custoTerceirizados = custoTotal(terceirizados);
 
 console.log(

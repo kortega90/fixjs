@@ -4,17 +4,19 @@ console.log(elem);
 const vectString = elem.innerHTML;
 console.log(vectString);
 
-const result = vectString.split('\n');
-console.log(result);
+const result = vectString.split('\n').map(x => Number(x));
 
-const numeros = result.map(x => Number(x));
-console.log(numeros);
+// const result = vectString.split('\n');
+// console.log(result);
+
+// const numeros = result.map(x => Number(x));
+// console.log(numeros);
 
 
 let max = 0;
-for (let i=0; i< numeros.length;i++){
-if(max < numeros[i]){
-    max = numeros[i]; 
+for (let i=0; i< result.length;i++){
+if(max < result[i]){
+    max = result[i]; 
 }
 
 }

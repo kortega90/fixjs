@@ -81,6 +81,7 @@ function custoTotal2(list) {
 //---------------------------------------------------------------------------
 
 const terceirizados = funcionariosTerceirizados(dados);
+console.log(terceirizados);
 
 const custoTerceirizados = custoTotal(terceirizados);
 
