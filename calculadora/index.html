@@ -18,7 +18,7 @@
       <section id="calc-section">
         <div class="calc-card">
           <div>
-            <div class="form-control">
+            <div class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off">
               <label for="number1">Logradouro:</label>
               <input
                 name="number1"
@@ -27,7 +27,7 @@
                 type="text"
               />
             </div>
-            <div class="form-control">
+            <div class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off">
               <label for="number2">Logradouro:</label>
               <input
                 name="number2"
