@@ -1,30 +1,12 @@
 const input1 = document.querySelector('[name="number1"]');
-input1.addEventListener("change", handleInput1);
+input1.addEventListener("change", handleInput);
 
 
-function handleInput1(event) {
- let  n1 = parseFloat(event.target.value);
-  if (isNumber(n1)) {
-    event.target.classList.remove("input-error");
-    return n1;
-  } else {
-    event.target.classList.add("input-error");
-  }
-}
 //----------------------------------------------------------------//
 const input2 = document.querySelector('[name="number2"]');
-input2.addEventListener("change", handleInput2);
+input2.addEventListener("change", handleInput);
 
 
-function handleInput2(event) {
-  let n2 = parseFloat(event.target.value);
-  if (isNumber(n2)) {
-    event.target.classList.remove("input-error");
-    return n2;
-  } else {
-    event.target.classList.add("input-error");
-  }
-}
 //----------------------------------------------------------------//
 
 const btnSum = document.querySelector('[id="btn-plus"]');
@@ -67,6 +49,8 @@ if (char == "C"){
   input2.value = null;
   const resultBox = document.querySelector('[id="result-box"]');
   resultBox.innerHTML = parseFloat(0);
+  input1.classList.remove("input-error");
+  input2.classList.remove("input-error");
 }
 }
 
@@ -75,4 +59,13 @@ if (char == "C"){
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
   }
+
+  function handleInput(event) {
+    let  n1 = parseFloat(event.target.value);
+     if (isNumber(n1)) {
+       event.target.classList.remove("input-error");
+     } else {
+       event.target.classList.add("input-error");
+     }
+   }
   
